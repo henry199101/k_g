@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>There will be a search kuangkuang...</h1>
-<input type="text" placeholder="input something you want to search">
-<input type="submit" value="Search it !">
+<h1>A Search Kuang</h1>
+<form method="post">
+    {{ form.csrf_token }}
+    {{ form.search_content }}
+    {{ form.search_button }}
+    <p>You can input some words, such as FuDan University, Jay Chou, eg.</p>
+</form>
 {% endblock %}
