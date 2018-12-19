@@ -19,4 +19,12 @@ Contributors
 '''
 @app.route('/search')
 def search():
-    return render_template('base.html')
+    return render_template('search.html')
+
+@app.route('/introduction')
+def introduction():
+    return render_template('introduction.html')
+
+@app.route('/contributors')
+def contributors():
+    return render_template('contributors.html')
