@@ -9,8 +9,11 @@ app = Flask(__name__)
 
 @app.route('/')
 @app.route('/home')
+@app.route('/home/')
+@app.route('/index')
+@app.route('/index')
 def index():
-    return '<h1>Hello, Knowledge Graph!</h1>'
+    return render_template('base.html')
 
 '''
 Search
