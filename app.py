@@ -2,6 +2,7 @@
 
 
 from flask import Flask, render_template
+from forms import SearchForm
 
 
 app = Flask(__name__)
@@ -18,7 +19,8 @@ def index():
 
 @app.route('/search')
 def search():
-    return render_template('search.html')
+    form = SearchForm()
+    return render_template('search.html', form=form)
 
 @app.route('/introduction')
 def introduction():
