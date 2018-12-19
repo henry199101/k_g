@@ -5,9 +5,9 @@
 </head>
 
 <body>
-<p>Search</p>
-<p>Introduction</p>
-<p>Contributors</p>
+<p><a href="{{ url_for('search') }}">Search</a></p>
+<p><a href="{{ url_for('introduction') }}">Introduction</a></p>
+<p><a href="{{ url_for('contributors') }}">Contributors</a></p>
 
 {% block content %}{% endblock %}
 
