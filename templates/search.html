@@ -13,7 +13,11 @@
     {{ form.pull_down_list }}
     -->
 
-    {{ form.search_button }}
+    <a href="{{ url_for('search') }}">{{ form.search_button }}</a>
+
     <p>You can input some words, such as FuDan University, Jay Chou, eg.</p>
+
+    {% include 'search_it.html' %}
+
 </form>
 {% endblock %}
