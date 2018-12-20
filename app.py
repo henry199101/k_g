@@ -37,3 +37,8 @@ def introduction():
 @app.route('/contributors')
 def contributors():
     return render_template('contributors.html')
+
+class KnowledgeTable(db.Model):
+    entity      = db.Column(db.Text, name='entity', primary_key=True)
+    attr_name   = db.Column(db.Text, name='attr_name')
+    attr_value  = db.Column(db.Text, name='attr_value')
