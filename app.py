@@ -4,7 +4,7 @@
 from flask import Flask, render_template
 from forms import SearchForm
 from flask_sqlalchemy import SQLAlchemy
-import os
+import os, click
 
 
 app = Flask(__name__)
@@ -42,3 +42,8 @@ class KnowledgeTable(db.Model):
     entity      = db.Column(db.Text, name='entity', primary_key=True)
     attr_name   = db.Column(db.Text, name='attr_name')
     attr_value  = db.Column(db.Text, name='attr_value')
+
+@app.cli.command()
+def initdb():
+    db.create_all()
+    click.echo('数据库初始化完毕！')
