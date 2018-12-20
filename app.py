@@ -3,10 +3,13 @@
 
 from flask import Flask, render_template
 from forms import SearchForm
+from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
 app.secret_key = 'secret string'
+
+db = SQLAlchemy(app)
 
 
 @app.route('/')
