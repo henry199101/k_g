@@ -4,12 +4,16 @@
 from flask import Flask, render_template
 from forms import SearchForm
 from flask_sqlalchemy import SQLAlchemy
+import os
 
 
 app = Flask(__name__)
 app.secret_key = 'secret string'
 
 db = SQLAlchemy(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = \
+    os.getenv('DATABASE_URL', 'sqlite:///' + os.path.join(app.root_path, 'data.db'))
+
 
 
 @app.route('/')
