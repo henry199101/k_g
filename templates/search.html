@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post" action="/result">
+    {{ form.csrf_token }}
+
+    {{ form.search_content(required='') }}<br>
+
+    {{ form.search_button }}</a>
+
+    <p>You can input some words, such as FuDan University, Jay Chou, eg.</p>
+
+</form>
+{% endblock %}
